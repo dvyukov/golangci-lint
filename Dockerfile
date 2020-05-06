@@ -1,9 +1,9 @@
-ARG golangci_lint_version=v1.23
+ARG golangci_lint_version=v1.25
 FROM golangci/golangci-lint:${golangci_lint_version}
 
-LABEL repository="https://github.com/actions-contrib/golangci-lint"
-LABEL homepage="https://github.com/actions-contrib/golangci-lint"
-LABEL maintainer="Chase Pierce <syntaqx@gmail.com>"
+LABEL repository="https://github.com/dvyukov/golangci-lint"
+LABEL homepage="https://github.com/dvyukov/golangci-lint"
+LABEL maintainer="Dmitry Vyukov"
 
 LABEL "com.github.actions.name"="golangci-lint"
 LABEL "com.github.actions.description"="Wraps golangci-lint as a GitHub action"
@@ -15,4 +15,4 @@ RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD [ "run" ]
+CMD [ "run", "./..." ]
